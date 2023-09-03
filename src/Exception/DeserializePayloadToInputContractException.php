@@ -12,7 +12,7 @@ class DeserializePayloadToInputContractException extends SymfonyEntryContractBun
         string $message = '',
         ?int $code = 500,
         ?Throwable $previous = null,
-        private ?array $payload = null,
+        private readonly ?array $payload = null,
     ) {
         parent::__construct($message, (int) $code, $previous);
     }

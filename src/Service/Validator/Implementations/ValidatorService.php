@@ -26,7 +26,7 @@ class ValidatorService implements ValidatorServiceInterface
         foreach ($violationList as $violation) {
             $errors[$violation->getPropertyPath()] = $violation->getMessage();
         }
-        if ($violationList->count()) {
+        if ($violationList->count() !== 0) {
             $errorJson = $this->serializer->serialize($errors, 'json', [
                 'json_encode_options' => JSON_UNESCAPED_UNICODE,
             ]);

@@ -14,8 +14,8 @@ use IWD\SymfonyEntryContract\Service\Validator\Interfaces\ValidatorServiceInterf
 
 class InputContractFactory implements InputContractFactoryInterface
 {
-    private ValidatorServiceInterface $validator;
-    private SerializerInterface $serializer;
+    private readonly ValidatorServiceInterface $validator;
+    private readonly SerializerInterface $serializer;
 
     public function __construct(
         ValidatorServiceInterface $validator,
@@ -44,11 +44,11 @@ class InputContractFactory implements InputContractFactoryInterface
                 $contractClass,
                 'json'
             );
-        } catch (NotNormalizableValueException $exception) {
+        } catch (NotNormalizableValueException $notNormalizableValueException) {
             throw new DeserializePayloadToInputContractException(
                 message: 'Not normalizable value. Check that required fields are passed and they are not null, and fields type.',
                 code: 400,
-                previous: $exception,
+                previous: $notNormalizableValueException,
                 payload: $payload
             );
         }

@@ -10,7 +10,7 @@ use IWD\SymfonyEntryContract\Dto\Input\OutputFormat;
 
 class Presenter
 {
-    private SerializerInterface $serializer;
+    private readonly SerializerInterface $serializer;
 
     public function __construct(SerializerInterface $serializer)
     {

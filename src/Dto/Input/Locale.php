@@ -14,14 +14,14 @@ class Locale
     public function __construct(
         public array $locales = []
     ) {
-        if (empty($locales)) {
+        if ($locales === []) {
             throw new SymfonyEntryContractBundleException('Locales is not set');
         }
     }
 
     public function getPriorityLang(): string
     {
-        if (empty($this->locales)) {
+        if ($this->locales === []) {
             return 'en';
         }
 

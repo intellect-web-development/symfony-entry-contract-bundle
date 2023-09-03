@@ -14,7 +14,7 @@ use IWD\SymfonyEntryContract\Service\RequestParser\Interfaces\LocaleMakerInterfa
 class LocaleResolver implements ValueResolverInterface
 {
     public function __construct(
-        private LocaleMakerInterface $localeMaker
+        private readonly LocaleMakerInterface $localeMaker
     ) {
     }
 

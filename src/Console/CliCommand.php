@@ -130,8 +130,8 @@ abstract class CliCommand extends Command
             $inputContractClass = $this->getInputContractClass();
             /** @var InputContractInterface $inputContract */
             $inputContract = $this->cliContractResolver->resolve($input, $inputContractClass);
-        } catch (ValidatorException $exception) {
-            $violations = json_decode($exception->getMessage(), true, 512, JSON_THROW_ON_ERROR);
+        } catch (ValidatorException $validatorException) {
+            $violations = json_decode($validatorException->getMessage(), true, 512, JSON_THROW_ON_ERROR);
             $message = 'Command options has violations:' . PHP_EOL;
 
             $i = 0;
