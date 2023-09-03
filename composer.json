@@ -1,6 +1,6 @@
 {
-    "name": "intellect-web-development/templator-symfony-bundle",
-    "description": "SymfonyEntryContract Symfony bundle for render template",
+    "name": "intellect-web-development/symfony-entry-contract-bundle",
+    "description": "SymfonyEntryContract Symfony bundle for pretty contracts",
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
