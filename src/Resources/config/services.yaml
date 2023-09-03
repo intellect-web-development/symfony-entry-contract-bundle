@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    IWD\SymfonyEntryContract\:
+        resource: '../../../src/*'
+        exclude:
+            - '../../../src/DependencyInjection/'
