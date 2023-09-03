@@ -7,3 +7,18 @@ services:
         resource: '../../../src/*'
         exclude:
             - '../../../src/DependencyInjection/'
+
+    IWD\Symfony\PresentationBundle\Service\Validator\Interfaces\ValidatorService:
+        class: IWD\Symfony\PresentationBundle\Service\Validator\Implementation\ValidatorService
+
+    IWD\Symfony\PresentationBundle\Core\Dto\Locale:
+        arguments: [ '%locale%' ]
+
+    IWD\Symfony\PresentationBundle\Service\RequestParser\Interfaces\LocaleMakerInterface:
+        class: IWD\Symfony\PresentationBundle\Service\RequestParser\Implementations\LocaleMaker
+
+    IWD\Symfony\PresentationBundle\Service\Factory\Interfaces\InputContractFactoryInterface:
+        class: IWD\Symfony\PresentationBundle\Service\Factory\Implementations\InputContractFactory
+
+    IWD\Symfony\PresentationBundle\Service\RequestParser\Interfaces\RequestParserInterface:
+        class: IWD\Symfony\PresentationBundle\Service\RequestParser\Implementations\RequestParser
