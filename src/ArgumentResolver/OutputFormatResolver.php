@@ -18,7 +18,7 @@ class OutputFormatResolver implements ValueResolverInterface
             return [];
         }
 
-        $format = $request->attributes->get('_format', 'json');
+        $format = (string) $request->attributes->get('_format', 'json');
         yield new OutputFormat($format);
     }
 

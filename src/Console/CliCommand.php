@@ -36,7 +36,7 @@ abstract class CliCommand extends Command
         $attributes = $reflection->getAttributes();
         foreach ($attributes as $attribute) {
             if (CliContract::class === $attribute->getName()) {
-                $class = $attribute->getArguments()['class'] ?? NullInputContract::class;
+                $class = (string) ($attribute->getArguments()['class'] ?? NullInputContract::class);
                 if (!class_exists($class)) {
                     throw new Exception(
                         sprintf(
@@ -140,8 +140,8 @@ abstract class CliCommand extends Command
                 $message .= sprintf(
                     '%s. %s: %s',
                     $i,
-                    $property,
-                    $violation,
+                    (string) $property,
+                    (string) $violation,
                 ) . PHP_EOL;
             }
             $io->error($message);

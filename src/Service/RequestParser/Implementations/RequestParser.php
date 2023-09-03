@@ -17,7 +17,7 @@ class RequestParser implements RequestParserInterface
     public function parse(Request $request): array
     {
         $content = json_decode((string) $request->getContent(), true, 512);
-        if (null === $content) {
+        if (!is_array($content)) {
             $content = [];
         }
 
