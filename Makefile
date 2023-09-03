@@ -15,7 +15,7 @@ up: docker-up
 down: docker-down
 
 composer-install:
-	docker compose run --rm php-fpm composer install
+	docker compose run --rm php-fpm composer require --dev zircote/swagger-php
 
 composer-dump:
 	docker compose run --rm php-fpm composer dump-autoload

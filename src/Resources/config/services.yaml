@@ -8,17 +8,17 @@ services:
         exclude:
             - '../../../src/DependencyInjection/'
 
-    IWD\Symfony\PresentationBundle\Service\Validator\Interfaces\ValidatorService:
-        class: IWD\Symfony\PresentationBundle\Service\Validator\Implementation\ValidatorService
+    IWD\SymfonyEntryContract\Service\Validator\Interfaces\ValidatorService:
+        class: IWD\SymfonyEntryContract\Service\Validator\Implementation\ValidatorService
 
-    IWD\Symfony\PresentationBundle\Core\Dto\Locale:
+    IWD\SymfonyEntryContract\Core\Dto\Locale:
         arguments: [ '%locale%' ]
 
-    IWD\Symfony\PresentationBundle\Service\RequestParser\Interfaces\LocaleMakerInterface:
-        class: IWD\Symfony\PresentationBundle\Service\RequestParser\Implementations\LocaleMaker
+    IWD\SymfonyEntryContract\Service\RequestParser\Interfaces\LocaleMakerInterface:
+        class: IWD\SymfonyEntryContract\Service\RequestParser\Implementations\LocaleMaker
 
-    IWD\Symfony\PresentationBundle\Service\Factory\Interfaces\InputContractFactoryInterface:
-        class: IWD\Symfony\PresentationBundle\Service\Factory\Implementations\InputContractFactory
+    IWD\SymfonyEntryContract\Service\Factory\Interfaces\InputContractFactoryInterface:
+        class: IWD\SymfonyEntryContract\Service\Factory\Implementations\InputContractFactory
 
-    IWD\Symfony\PresentationBundle\Service\RequestParser\Interfaces\RequestParserInterface:
-        class: IWD\Symfony\PresentationBundle\Service\RequestParser\Implementations\RequestParser
+    IWD\SymfonyEntryContract\Service\RequestParser\Interfaces\RequestParserInterface:
+        class: IWD\SymfonyEntryContract\Service\RequestParser\Implementations\RequestParser
