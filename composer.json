@@ -14,8 +14,8 @@
         "symfony/config": "*",
         "symfony/dependency-injection": "*",
         "symfony/http-kernel": "*",
-        "symfony/validator": "^6.3",
-        "symfony/serializer": "^6.3"
+        "symfony/validator": "*",
+        "symfony/serializer": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.3",
