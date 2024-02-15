@@ -146,7 +146,7 @@ abstract class CliCommand extends Command
             }
             $io->error($message);
 
-            return self::FAILURE;
+            return self::INVALID;
         }
 
         return $this->handle(
