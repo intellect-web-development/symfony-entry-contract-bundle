@@ -10,11 +10,11 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 use IWD\SymfonyEntryContract\Exception\ValidatorException;
 use IWD\SymfonyEntryContract\Service\Validator\Interfaces\ValidatorServiceInterface;
 
-class ValidatorService implements ValidatorServiceInterface
+readonly class ValidatorService implements ValidatorServiceInterface
 {
     public function __construct(
-        private readonly ValidatorInterface $validator,
-        private readonly SerializerInterface $serializer,
+        private ValidatorInterface $validator,
+        private SerializerInterface $serializer,
     ) {
     }
 

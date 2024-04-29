@@ -13,11 +13,11 @@ use IWD\SymfonyEntryContract\Interfaces\InputContractInterface;
 use IWD\SymfonyEntryContract\Service\Factory\Interfaces\InputContractFactoryInterface;
 use IWD\SymfonyEntryContract\Service\RequestParser\Interfaces\RequestParserInterface;
 
-class ContractResolver implements ValueResolverInterface
+readonly class ContractResolver implements ValueResolverInterface
 {
     public function __construct(
-        private readonly InputContractFactoryInterface $inputContractResolver,
-        private readonly RequestParserInterface $requestParser
+        private InputContractFactoryInterface $inputContractResolver,
+        private RequestParserInterface $requestParser
     ) {
     }
 
