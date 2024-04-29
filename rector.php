@@ -25,8 +25,8 @@ use Rector\CodeQuality\Rector\NullsafeMethodCall\CleanupUnneededNullsafeOperator
 use Rector\CodeQuality\Rector\Ternary\UnnecessaryTernaryExpressionRector;
 use Rector\CodingStyle\Rector\ArrowFunction\StaticArrowFunctionRector;
 use Rector\CodingStyle\Rector\Catch_\CatchExceptionNameMatchingTypeRector;
-use Rector\CodingStyle\Rector\ClassMethod\DataProviderArrayItemsNewlinedRector;
 use Rector\CodingStyle\Rector\Encapsed\WrapEncapsedVariableInCurlyBracesRector;
+use Rector\CodingStyle\Rector\FuncCall\ArraySpreadInsteadOfArrayMergeRector;
 use Rector\CodingStyle\Rector\FuncCall\CountArrayToEmptyArrayComparisonRector;
 use Rector\CodingStyle\Rector\FuncCall\StrictArraySearchRector;
 use Rector\CodingStyle\Rector\Plus\UseIncrementAssignRector;
@@ -60,7 +60,6 @@ use Rector\Php72\Rector\Unset_\UnsetCastRector;
 use Rector\Php73\Rector\FuncCall\ArrayKeyFirstLastRector;
 use Rector\Php73\Rector\FuncCall\StringifyStrNeedlesRector;
 use Rector\Php74\Rector\Assign\NullCoalescingOperatorRector;
-use Rector\Php74\Rector\FuncCall\ArraySpreadInsteadOfArrayMergeRector;
 use Rector\Php74\Rector\Ternary\ParenthesizeNestedTernaryRector;
 use Rector\Php80\Rector\ClassConstFetch\ClassOnThisVariableObjectRector;
 use Rector\Php80\Rector\ClassMethod\AddParamBasedOnParentClassMethodRector;
@@ -119,7 +118,6 @@ return static function (RectorConfig $rectorConfig): void {
         UnnecessaryTernaryExpressionRector::class,
         CatchExceptionNameMatchingTypeRector::class,
         CountArrayToEmptyArrayComparisonRector::class,
-        DataProviderArrayItemsNewlinedRector::class,
         StaticArrowFunctionRector::class,
         StrictArraySearchRector::class,
         SymplifyQuoteEscapeRector::class,
