@@ -11,12 +11,11 @@
     ],
     "require": {
         "php": ">=8.2",
-        "symfony/config": "6.*",
-        "symfony/dependency-injection": "6.*",
-        "symfony/http-kernel": "6.*",
-        "symfony/validator": "6.*",
-        "symfony/serializer": "6.*",
-        "symfony/stopwatch": "6.*"
+        "symfony/config": "*",
+        "symfony/dependency-injection": "*",
+        "symfony/http-kernel": "*",
+        "symfony/validator": "*",
+        "symfony/serializer": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.3",
