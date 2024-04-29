@@ -37,10 +37,7 @@ class Presenter
             status: $status
         );
 
-        $headers = array_merge(
-            $headers,
-            ['Content-Type' => 'application/' . $outputFormat->getFormat()]
-        );
+        $headers = [...$headers, 'Content-Type' => 'application/' . $outputFormat->getFormat()];
         $response->headers->add($headers);
 
         return $response;

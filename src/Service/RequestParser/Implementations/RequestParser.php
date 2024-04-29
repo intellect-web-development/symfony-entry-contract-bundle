@@ -22,11 +22,7 @@ class RequestParser implements RequestParserInterface
         }
 
         /** @var array<string, string> $payload */
-        $payload = array_merge(
-            $request->query->all(),
-            $content,
-            $request->request->all()
-        );
+        $payload = [...$request->query->all(), ...$content, ...$request->request->all()];
 
         return $payload;
     }

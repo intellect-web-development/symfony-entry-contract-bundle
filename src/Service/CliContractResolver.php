@@ -21,10 +21,7 @@ class CliContractResolver
     public function resolve(InputInterface $input, string $contractClass): InputContractInterface
     {
         /** @var array<string, string> $payload */
-        $payload = array_merge(
-            $input->getOptions(),
-            $input->getArguments(),
-        );
+        $payload = [...$input->getOptions(), ...$input->getArguments()];
 
         return $this->inputContractResolver->resolve(
             $contractClass,
