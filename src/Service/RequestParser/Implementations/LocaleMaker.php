@@ -19,11 +19,13 @@ class LocaleMaker implements LocaleMakerInterface
             $languages[] = $request->query->get(self::LOCALE_QUERY_PARAM);
         }
 
-        if ($preferredLanguage = $request->getPreferredLanguage()) {
+        $preferredLanguage = $request->getPreferredLanguage();
+        if (null !== $preferredLanguage) {
             $languages[] = $preferredLanguage;
         }
 
-        if ($acceptLanguage = $request->headers->get('Accept-Language')) {
+        $acceptLanguage = $request->headers->get('Accept-Language');
+        if (null !== $acceptLanguage) {
             foreach (explode(',', $acceptLanguage) as $langItem) {
                 $result = strstr($langItem, ';', true);
                 $languages[] = (false === $result) ? $langItem : $result;
