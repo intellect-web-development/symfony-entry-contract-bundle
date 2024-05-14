@@ -11,10 +11,10 @@ use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
 use IWD\SymfonyEntryContract\Dto\Input\Locale;
 use IWD\SymfonyEntryContract\Service\RequestParser\Interfaces\LocaleMakerInterface;
 
-class LocaleResolver implements ValueResolverInterface
+readonly class LocaleResolver implements ValueResolverInterface
 {
     public function __construct(
-        private readonly LocaleMakerInterface $localeMaker
+        private LocaleMakerInterface $localeMaker
     ) {
     }
 
