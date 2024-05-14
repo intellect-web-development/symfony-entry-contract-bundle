@@ -10,7 +10,7 @@ use Symfony\Component\HttpKernel\Controller\ValueResolverInterface;
 use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
 use IWD\SymfonyEntryContract\Dto\Input\OutputFormat;
 
-class OutputFormatResolver implements ValueResolverInterface
+readonly class OutputFormatResolver implements ValueResolverInterface
 {
     public function resolve(Request $request, ArgumentMetadata $argument): Generator
     {
