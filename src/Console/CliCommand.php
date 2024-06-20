@@ -18,6 +18,10 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 abstract class CliCommand extends Command
 {
+    protected readonly SymfonyStyle $io;
+    protected readonly InputInterface $input;
+    protected readonly OutputInterface $output;
+
     public function __construct(
         private readonly CliContractResolver $cliContractResolver,
     ) {
@@ -115,7 +119,7 @@ abstract class CliCommand extends Command
         }
     }
 
-    abstract protected function handle(SymfonyStyle $io, InputContractInterface $inputContract): int;
+    abstract protected function handle(InputContractInterface $inputContract): int;
 
     protected function autoconfigure(): bool
     {
@@ -124,7 +128,9 @@ abstract class CliCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $io = new SymfonyStyle($input, $output);
+        $this->io = new SymfonyStyle($input, $output);
+        $this->input = $input;
+        $this->output = $output;
 
         try {
             $inputContractClass = $this->getInputContractClass();
@@ -144,13 +150,12 @@ abstract class CliCommand extends Command
                     (string) $violation,
                 ) . PHP_EOL;
             }
-            $io->error($message);
+            $this->io->error($message);
 
             return self::INVALID;
         }
 
         return $this->handle(
-            io: $io,
             inputContract: $inputContract,
         );
     }
