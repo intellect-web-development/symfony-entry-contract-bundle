@@ -16,11 +16,14 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 abstract class CliCommand extends Command
 {
-    protected readonly SymfonyStyle $io;
-    protected readonly InputInterface $input;
-    protected readonly OutputInterface $output;
+    protected SymfonyStyle $io;
+    protected InputInterface $input;
+    protected OutputInterface $output;
 
     public function __construct(
         private readonly CliContractResolver $cliContractResolver,
