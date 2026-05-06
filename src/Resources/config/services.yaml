@@ -11,9 +11,6 @@ services:
     IWD\SymfonyEntryContract\Service\Validator\Interfaces\ValidatorService:
         class: IWD\SymfonyEntryContract\Service\Validator\Implementation\ValidatorService
 
-    IWD\SymfonyEntryContract\Core\Dto\Locale:
-        arguments: [ '%locale%' ]
-
     IWD\SymfonyEntryContract\Service\RequestParser\Interfaces\LocaleMakerInterface:
         class: IWD\SymfonyEntryContract\Service\RequestParser\Implementations\LocaleMaker
 
