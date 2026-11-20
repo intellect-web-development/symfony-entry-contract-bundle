@@ -14,20 +14,15 @@ use Rector\CodeQuality\Rector\Foreach_\SimplifyForeachToCoalescingRector;
 use Rector\CodeQuality\Rector\FuncCall\FloatvalToTypeCastRector;
 use Rector\CodeQuality\Rector\FuncCall\InlineIsAInstanceOfRector;
 use Rector\CodeQuality\Rector\FuncCall\IntvalToTypeCastRector;
-use Rector\CodeQuality\Rector\FuncCall\SimplifyRegexPatternRector;
 use Rector\CodeQuality\Rector\Identical\SimplifyConditionsRector;
 use Rector\CodeQuality\Rector\If_\ConsecutiveNullCompareReturnsToNullCoalesceQueueRector;
-use Rector\CodeQuality\Rector\If_\ExplicitBoolCompareRector;
-use Rector\CodeQuality\Rector\If_\ShortenElseIfRector;
 use Rector\CodeQuality\Rector\Isset_\IssetOnPropertyObjectToPropertyExistsRector;
 use Rector\CodeQuality\Rector\NotEqual\CommonNotEqualRector;
 use Rector\CodeQuality\Rector\NullsafeMethodCall\CleanupUnneededNullsafeOperatorRector;
 use Rector\CodeQuality\Rector\Ternary\UnnecessaryTernaryExpressionRector;
 use Rector\CodingStyle\Rector\ArrowFunction\StaticArrowFunctionRector;
 use Rector\CodingStyle\Rector\Catch_\CatchExceptionNameMatchingTypeRector;
-use Rector\CodingStyle\Rector\Encapsed\WrapEncapsedVariableInCurlyBracesRector;
 use Rector\CodingStyle\Rector\FuncCall\ArraySpreadInsteadOfArrayMergeRector;
-use Rector\CodingStyle\Rector\FuncCall\CountArrayToEmptyArrayComparisonRector;
 use Rector\CodingStyle\Rector\FuncCall\StrictArraySearchRector;
 use Rector\CodingStyle\Rector\Plus\UseIncrementAssignRector;
 use Rector\CodingStyle\Rector\String_\SymplifyQuoteEscapeRector;
@@ -100,7 +95,6 @@ return static function (RectorConfig $rectorConfig): void {
         CombinedAssignRector::class,
         CommonNotEqualRector::class,
         ConsecutiveNullCompareReturnsToNullCoalesceQueueRector::class,
-        ExplicitBoolCompareRector::class,
         FloatvalToTypeCastRector::class,
         ForeachToInArrayRector::class,
         InlineIfToExplicitIfRector::class,
@@ -108,21 +102,17 @@ return static function (RectorConfig $rectorConfig): void {
         IntvalToTypeCastRector::class,
         IssetOnPropertyObjectToPropertyExistsRector::class,
         JoinStringConcatRector::class,
-        ShortenElseIfRector::class,
         SimplifyConditionsRector::class,
         SimplifyDeMorganBinaryRector::class,
         SimplifyEmptyCheckOnEmptyArrayRector::class,
         SimplifyForeachToCoalescingRector::class,
-        SimplifyRegexPatternRector::class,
         ThrowWithPreviousExceptionRector::class,
         UnnecessaryTernaryExpressionRector::class,
         CatchExceptionNameMatchingTypeRector::class,
-        CountArrayToEmptyArrayComparisonRector::class,
         StaticArrowFunctionRector::class,
         StrictArraySearchRector::class,
         SymplifyQuoteEscapeRector::class,
         UseIncrementAssignRector::class,
-        WrapEncapsedVariableInCurlyBracesRector::class,
         RemoveConcatAutocastRector::class,
         RemoveDeadTryCatchRector::class,
         RemoveDeadZeroAndOneOperationRector::class,
